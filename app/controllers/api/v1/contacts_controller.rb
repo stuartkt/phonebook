@@ -6,6 +6,7 @@ module Api
 
       def index
         @contacts = @phonebook.contacts
+        @contacts = @contacts.search(params[:search]) if params.key? :search
 
         render json: @contacts
       end

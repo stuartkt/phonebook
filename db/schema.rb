@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190222134557) do
+ActiveRecord::Schema.define(version: 20190222134808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20190222134557) do
   end
 
   add_index "emails", ["contact_id"], name: "index_emails_on_contact_id", using: :btree
+
+  create_table "phone_numbers", force: :cascade do |t|
+    t.string   "phone_number", null: false
+    t.integer  "type",         null: false
+    t.integer  "contact_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "phone_numbers", ["contact_id"], name: "index_phone_numbers_on_contact_id", using: :btree
 
   create_table "phonebooks", force: :cascade do |t|
     t.string   "name",       null: false
@@ -76,5 +86,6 @@ ActiveRecord::Schema.define(version: 20190222134557) do
 
   add_foreign_key "contacts", "phonebooks"
   add_foreign_key "emails", "contacts"
+  add_foreign_key "phone_numbers", "contacts"
   add_foreign_key "phonebooks", "users"
 end

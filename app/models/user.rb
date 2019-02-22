@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
 
+  has_many :phonebooks, dependent: :destroy
+
+  validates_format_of :email, with: Devise.email_regexp
 end

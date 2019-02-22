@@ -1,0 +1,17 @@
+en:
+  exceptions:
+    internal_server_error:
+      message: 'Something went wrong.'
+    not_authenticated:
+      message: 'Please log in first.'
+    not_authorized:
+      message: '%{message}'
+    not_found:
+      message: 'The requested path could not be found.'
+    record_not_found:
+      message: 'The record could not be found.'
+    record_invalid:
+      message: 'The record is invalid.'
+    parameter_missing:
+      message: "The parameter \'%{param}\' cannot be blank."
+

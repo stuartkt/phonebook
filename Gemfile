@@ -26,6 +26,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'devise_token_auth'
 gem 'omniauth'
+
+gem 'pg_search'
+gem 'pundit', '~> 1.1.0'
+
+
+gem 'active_model_serializers', '~> 0.9.4'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

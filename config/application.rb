@@ -6,8 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-
-
 module Untitled3
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -25,8 +23,8 @@ module Untitled3
     # Do not swallow errors in after_commit/after_rollback callbacks.
     #
     config.autoload_paths <<
-        Rails.root.join('app', 'serializers', 'concerns') <<
-        Rails.root.join('lib')
+      Rails.root.join('app', 'serializers', 'concerns') <<
+      Rails.root.join('lib')
 
     config.active_record.raise_in_transactional_callbacks = true
   end

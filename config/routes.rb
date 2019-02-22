@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-
   namespace :api do
     namespace :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
 
-      resources :phonebooks
+      resources :phonebooks, only: %i[index create update show destroy] do
+        resources :contacts, shallow: true
+      end
     end
   end
   devise_for :users

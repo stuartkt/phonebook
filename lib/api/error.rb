@@ -11,10 +11,10 @@ module Api
 
     def as_json
       {
-          error: {
-              code: code,
-              message: message
-          }
+        error: {
+          code: code,
+          message: message
+        }
       }
     end
   end

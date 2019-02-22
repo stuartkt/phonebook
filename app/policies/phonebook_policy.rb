@@ -9,6 +9,7 @@ class PhonebookPolicy
   def show?
     phonebook.user == user
   end
+
   def update?
     phonebook.user == user
   end
